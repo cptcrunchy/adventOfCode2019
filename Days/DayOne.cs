@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Linq;
-using System.Text;
+using Advent.Days.Utils;
 
 namespace Advent.Days
 {
 	public static class DayOne
 	{
-		public static string Puzzle { get; } = System.IO.File.ReadAllText(@".\Data\DayOne.txt", Encoding.UTF8);
-		public static int[] Data { get; } = Parse(Puzzle, '\n');
-
-		public static void Part_One()
+		
+		public static void Part_One(string Puzzle)
 		{
+			int[] Data = Utilities.Parse(Puzzle, '\n');
 			int fuelSum = Data.Select(fuel => CalcFuel(fuel)).Sum();
 
 			Console.WriteLine("Part 1:");
@@ -19,9 +18,9 @@ namespace Advent.Days
 			Console.WriteLine();
 		}
 
-		public static void Part_Two()
+		public static void Part_Two(string Puzzle)
 		{
-			
+			int[] Data = Utilities.Parse(Puzzle, '\n');
 			int fuelSum = Data.Aggregate( 0, (total, fuel) => total + RecursCalcFuel(fuel));
 
 			Console.WriteLine("Part 2:");
@@ -30,9 +29,7 @@ namespace Advent.Days
 			Console.WriteLine();
 		}
 
-		public static int[] Parse(string input, char delimiter) => input.Split(delimiter).Select( n =>  int.Parse(n)).ToArray();
 		public static int CalcFuel(int fuel) => (fuel / 3) - 2;
-				
 
 		public static int RecursCalcFuel(int fuel)
 		{

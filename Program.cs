@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Advent.Days.Utils;
+using System;
 
 namespace Advent
 {
@@ -6,8 +7,13 @@ namespace Advent
 	{
 		static void Main(string[] args)
 		{
-			Days.DayOne.Part_One();
-			Days.DayOne.Part_Two();
+			Console.WriteLine("Day One");
+			var DayOnePuzzle = Utilities.GetPuzzle("DayOne");
+			Days.DayOne.Part_One(DayOnePuzzle);
+			Days.DayOne.Part_Two(DayOnePuzzle);
+
+
+
 		}
 	}
 }
