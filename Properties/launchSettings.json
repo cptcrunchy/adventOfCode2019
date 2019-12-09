@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Advent": {
+      "commandName": "Project",
+      "workingDirectory": "W:\\Personal\\Advent-of-Code\\advent-of-code-2019\\csharp\\Advent\\Advent"
+    }
+  }
+}
